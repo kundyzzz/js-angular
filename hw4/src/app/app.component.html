@@ -1,0 +1,50 @@
+<section class="about-section mb-5">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters position-relative">
+      <div class="left-header d-none d-lg-block col-lg-3 col-xl-4">
+        <div class="v-center-box d-flex align-items-end text-uppercase">
+          <h2 class="mb-0">About Me</h2>
+        </div>
+      </div>
+      <div class="col-lg-9 col-xl-8">
+        <div class="main-content p-5">
+          <div class="main-header mb-4">
+            <h6 class="sub-heading text-uppercase d-block mb-2">Who I am</h6>
+            <h1 class="main-heading d-inline-block text-uppercase pb-3 border-bottom">&lt; About &gt;</h1>
+          </div>
+
+          <div class="row mb-5">
+            <div class="mb-5 mb-sm-4 col-md-4">
+              <img [src]="photoUrl" alt="Profile photo">
+            </div>
+            <div class="col-md-8">
+              <div class="about__text mb-5 mb-sm-4 mb-md-4">
+                <h3>I'm {{ name }}</h3>
+                <p class="m-0">{{ study }}</p>
+                <p class="m-0">{{ goal }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <p>Likes: {{ likes }}</p>
+            <button (click)="addLike()">👍 Like</button>
+            <button (click)="toggleMessage()">Toggle Message</button>
+            <p *ngIf="showMessage">Thank you for visiting!</p>
+          </div>
+
+          <div class="mb-4">
+            <input [(ngModel)]="inputName" placeholder="Enter your name">
+            <p *ngIf="inputName">Hello, {{ inputName }}!</p>
+
+            <input [(ngModel)]="email" placeholder="Leave your email">
+            <button (click)="subscribe()">Subscribe</button>
+            <p *ngIf="subscribed">Thanks, {{ email }}, we’ll be in touch!</p>
+          </div>
+        </div>
+        <app-universities></app-universities>
+      </div>
+    </div>
+  </div>
+  
+</section>

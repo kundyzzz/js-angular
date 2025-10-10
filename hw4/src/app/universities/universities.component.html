@@ -1,0 +1,14 @@
+<div class="universities-container">
+  <h2>Universities in Kazakhstan</h2>
+  <button (click)="loadUniversities()">Show Universities</button>
+
+  <p *ngIf="loading" class="loading">Loading...</p>
+
+  <ul *ngIf="!loading && universities.length > 0">
+    <li *ngFor="let uni of universities">
+      <strong>{{ uni.name }}</strong><br>
+      <a [href]="uni.web_pages[0]" target="_blank">{{ uni.web_pages[0] }}</a>
+    </li>
+  </ul>
+
+</div>
