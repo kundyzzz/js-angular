@@ -1,0 +1,25 @@
+<div class="universities-container">
+  <h2>Universities in Kazakhstan</h2>
+  <button (click)="loadUniversities()">Show Universities</button>
+
+  <div class="universities-search" *ngIf="universities.length > 0">
+    <input
+      type="text"
+      placeholder="Search..."
+      [(ngModel)]="searching"
+      (input)="onSearchChange()"
+    />
+    <button (click)="manualSearch()">Search</button>
+  </div>
+
+  <ul *ngIf="filteredUniversities.length > 0">
+    <li *ngFor="let uni of filteredUniversities">
+      <strong>{{ uni.name }}</strong><br />
+      <a [href]="uni.web_pages[0]" target="_blank">{{ uni.web_pages[0] }}</a>
+    </li>
+  </ul>
+
+  <p *ngIf="universities.length > 0 && filteredUniversities.length === 0">
+    No results found.
+  </p>
+</div>
