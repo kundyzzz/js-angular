@@ -15,7 +15,6 @@ export class ProductDetailComponent {
 
   toggleFavorite() {
     this.isFavorite = !this.isFavorite;
-    // Эмитим событие вверх к ProductListComponent
     if (this.onFavoriteChange) {
       this.onFavoriteChange(this.product, this.isFavorite);
     }
@@ -24,3 +23,4 @@ export class ProductDetailComponent {
   @Input()
   onFavoriteChange!: (product: any, status: boolean) => void;
 }
+
