@@ -1,0 +1,24 @@
+<section class="universities-section">
+  <div class="container">
+    <h2 class="universities-title">Universities</h2>
+
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="onSearchChange()"
+      placeholder="Search..."
+      class="universities-search"
+    />
+
+    <div *ngIf="isLoading" class="loading">Loading...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div *ngIf="!isLoading && !error" class="universities-list">
+      <app-item-card
+        *ngFor="let uni of universities"
+        [university]="uni"
+        class="uni-card"
+      ></app-item-card>
+    </div>
+  </div>
+</section>

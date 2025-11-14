@@ -1,0 +1,74 @@
+.universities-section {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.universities-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #6c63ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.universities-search {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #6c63ff;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.universities-search:focus {
+  border-color: #3f3d56;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  color: #6c63ff;
+}
+
+.error {
+  color: #ff4d4f;
+}
+
+.universities-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+.uni-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uni-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .universities-search {
+    max-width: 100%;
+  }
+
+  .universities-list {
+    grid-template-columns: 1fr;
+  }
+}

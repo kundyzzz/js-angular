@@ -1,0 +1,23 @@
+<section class="university-details">
+  <div class="container">
+    <button (click)="goBack()" class="btn-back">← Back</button>
+
+    <div *ngIf="isLoading" class="loading">Loading...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div *ngIf="!isLoading && !error && university" class="details-card">
+      <h2 class="uni-name">{{ university.name }}</h2>
+
+      <p><strong>Country:</strong> {{ university.country }}</p>
+      <p><strong>Alpha code:</strong> {{ university.alpha_two_code }}</p>
+      <p><strong>Domain:</strong> {{ university.domains[0] }}</p>
+      <p><strong>Website:</strong>
+        <a [href]="university.web_pages[0]" target="_blank">
+          {{ university.web_pages[0] }}
+        </a>
+      </p>
+
+      <p><strong>ID:</strong> {{ university.id }}</p>
+    </div>
+  </div>
+</section>
