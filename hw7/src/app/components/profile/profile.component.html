@@ -1,0 +1,15 @@
+<section class="profile-section">
+    <div class="profile-box">
+        <h2 class="profile-title">Profile</h2>
+
+        <div *ngIf="user$ | async as user; else noUser">
+            <p class="profile-field"><strong>Email:</strong> {{ user.email }}</p>
+            <p class="profile-field"><strong>UID:</strong> {{ user.uid }}</p>
+            <button class="logout-btn" (click)="onLogout()">Logout</button>
+        </div>
+
+        <ng-template #noUser>
+        <p class="no-user">No user found</p>
+        </ng-template>
+    </div>
+</section>
