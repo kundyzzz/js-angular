@@ -1,0 +1,76 @@
+.university-details {
+  padding: 3rem 1.5rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-back:hover {
+  background-color: #4d48ae;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1rem;
+  margin: 2rem 0;
+  color: #6c63ff;
+}
+
+.error {
+  color: #ff4d4f;
+}
+
+.details-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.uni-name {
+  font-size: 1.8rem;
+  color: #3f3d56;
+  margin-bottom: 1rem;
+}
+
+.details-card p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.details-card a {
+  color: #6c63ff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.details-card a:hover {
+  text-decoration: underline;
+  color: #3f3d56;
+}
+
+@media (max-width: 576px) {
+  .details-card {
+    padding: 1.2rem;
+  }
+}

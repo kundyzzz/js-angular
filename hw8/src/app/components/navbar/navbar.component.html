@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <a routerLink="" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact:true}">Home</a>
+  <a routerLink="about" routerLinkActive="active" class="nav-link">About</a>
+  <a routerLink="items" routerLinkActive="active" class="nav-link">Items</a>
+
+  <ng-container *ngIf="(auth.currentUser$ | async) as user; else loggedOut">
+    <a routerLink="profile" routerLinkActive="active" class="nav-link">Profile</a>
+    <a (click)="logout()" class="nav-link logout-link" style="cursor: pointer;">Logout</a>
+  </ng-container>
+
+  <ng-template #loggedOut>
+    <a routerLink="login" routerLinkActive="active" class="nav-link">Login</a>
+    <a routerLink="signup" routerLinkActive="active" class="nav-link">Signup</a>
+  </ng-template>
+</nav>

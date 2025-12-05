@@ -1,0 +1,138 @@
+.about-section {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.about-left {
+  width: 35%;
+  background-color: #6c63ff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-left h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-left-text {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #ddd;
+}
+
+.about-right {
+  width: 65%;
+  padding: 3rem 4rem;
+  overflow-y: auto;
+}
+
+.about-header h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #6c63ff;
+}
+
+.about-header p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+.about-contacts {
+  margin-top: 30px;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.about-contacts h3 {
+  color: #6c63ff;
+  margin-bottom: 15px;
+}
+
+.about-contacts p {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.about-right::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about-right::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.about-right::-webkit-scrollbar-thumb {
+  background: #6c63ff;
+  border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    flex-direction: column;
+  }
+  .about-left, .about-right {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 2rem;
+  }
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+}
