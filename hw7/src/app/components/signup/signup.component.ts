@@ -24,6 +24,10 @@ export class SignupComponent {
   loading = false;
   error: string | null = null;
 
+  ngOnInit() {
+    this.form.reset();
+  }
+  
   passwordsMatch(g: any) {
     return g.get('password')?.value === g.get('confirm')?.value ? null : { mismatch: true };
   }
@@ -43,3 +47,4 @@ export class SignupComponent {
     }
   }
 }
+
