@@ -29,13 +29,17 @@ export class ItemsService {
     }
 
     return this.http.get<Omit<University, 'id'>[]>(url).pipe(
-      map((items, index) =>
-        items.map((item, i) => ({
+      map((items) =>
+        items.map((item) => ({
           ...item,
-          id: i + 1
+          id: this.generateId(item)
         }))
       )
     );
+  }
+
+  private generateId(item: Omit<University, 'id'>): number {
+    return (item.name + item.country).length;
   }
   
   getUniversityById(id: number): Observable<University | undefined> {
@@ -44,3 +48,4 @@ export class ItemsService {
     );
   }
 }
+
