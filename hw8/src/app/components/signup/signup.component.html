@@ -3,14 +3,17 @@
     <h2>Sign Up</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <input formControlName="email" type="email" />
-      <input formControlName="password" type="password" />
-      <input formControlName="confirm" type="password" />
+      <div *ngIf="form.controls.email.invalid && form.controls.email.touched">Enter a valid email</div>
 
-      <div *ngIf="form.hasError('mismatch') && form.touched">Passwords do not match</div>
-      <button type="submit" [disabled]="loading">{{ loading ? 'Sign up...' : 'Sign Up' }}</button>
+      <input formControlName="password" type="password" />
+      <div *ngIf="form.controls.password.invalid && form.controls.password.touched">Password is required</div>
+
+      <button type="submit" [disabled]="loading">{{ loading ? 'Login...' : 'Login' }}</button>
     </form>
+
 
     <div *ngIf="error" class="error">{{ error }}</div>
     <p>Already have an account? <a routerLink="/login">Login</a></p>
     </div>
 </section>
+
