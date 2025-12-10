@@ -1,10 +1,10 @@
 <section class="signup-section">
     <div class="signup-box">
     <h2>Sign Up</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <input formControlName="email" type="email" />
-      <input formControlName="password" type="password" />
-      <input formControlName="confirm" type="password" />
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+      <input formControlName="email" type="email" placeholder="Enter your email" autocomplete="new-email"/>
+      <input formControlName="password" type="password" placeholder="Create a password" autocomplete="new-password"/>
+      <input formControlName="confirm" type="password" placeholder="Repeat password" autocomplete="new-password"/>
 
       <div *ngIf="form.hasError('mismatch') && form.touched">Passwords do not match</div>
       <button type="submit" [disabled]="loading">{{ loading ? 'Sign up...' : 'Sign Up' }}</button>
@@ -14,3 +14,4 @@
     <p>Already have an account? <a routerLink="/login">Login</a></p>
     </div>
 </section>
+
