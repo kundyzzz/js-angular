@@ -11,7 +11,6 @@ export interface University {
   alpha_two_code: string;
   web_pages: string[];
 }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -38,14 +37,21 @@ export class ItemsService {
     );
   }
 
-  private generateId(item: Omit<University, 'id'>): number {
-    return (item.name + item.country).length;
-  }
-  
   getUniversityById(id: number): Observable<University | undefined> {
     return this.getUniversities().pipe(
       map(items => items.find(u => u.id === id))
     );
   }
-}
 
+  private generateId(item: Omit<University, 'id'>): number {
+    const str = item.web_pages?.[0] || item.name;
+    let hash = 0;
+
+    for (let i = 0; i < str.length; i++) {
+      hash = (hash << 5) - hash + str.charCodeAt(i);
+      hash |= 0;
+    }
+
+    return Math.abs(hash);
+  }
+}
